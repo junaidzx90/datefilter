@@ -1,0 +1,91 @@
+:root{
+    --dfgeneral: #d00a0f;
+}
+
+.datefilter-filter {
+    display: flex;
+    justify-content: center;
+    padding: 10px;
+    background: var(--dfgeneral);
+    border-radius: 5px;
+}
+.datefilter-filter .filter-box {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+.datefilter-filter .filter-box h3 {
+    margin: 0;
+    font-size: 18px;
+}
+input#datefilter-date {
+    all: unset;
+    background: transparent;
+    width: 100px;
+    color: #fff;
+}
+input#datefilter-date::placeholder{
+    color: #fff;
+}
+.filter-box label {
+    display: inline-flex;
+    gap: 20px;
+    align-items: center;
+    color: #fff;
+}
+.filter-box label svg {
+    cursor: pointer;
+}
+.datefilter-results {
+    margin-top: 20px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+.datefilter-results h3.results-title {
+    background: var(--dfgeneral);
+    padding: 5px 10px;
+    margin: 0;
+    font-size: 18px;
+    font-weight: 500;
+    color: #fff;
+}
+.datefilter-results ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+.datefilter-results ul li {
+    padding: 10px;
+    border-bottom: 1px solid #ddd;
+    display: flex;
+    gap: 20px;
+    justify-content: space-between;
+}
+.datefilter-results ul li .post-content {
+    width: 70%;
+}
+.su-row {
+    width: 100%;
+}
+.df_loader {
+    position: fixed;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    backdrop-filter: blur(2px);
+    z-index: 999999;
+  }
+  .df_loader.dnone{
+    display: none !important;
+  }
+  .df_error {
+    padding: 5px 10px;
+}
+.ui-widget.ui-widget-content {
+    border: 1px solid #c5c5c5;
+    z-index: 999999 !important;
+}
