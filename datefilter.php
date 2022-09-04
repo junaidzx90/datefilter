@@ -15,7 +15,7 @@
  * @wordpress-plugin
  * Plugin Name:       DateFilter
  * Plugin URI:        https://www.fiverr.com
- * Description:       This plugin is used for filtering posts by date, the output will show through [datefilter]
+ * Description:       This plugin is used for filtering posts by date, the output will show through [datefilter cat=""]
  * Version:           1.0.0
  * Author:            Developer Junayed
  * Author URI:        https://www.fiverr.com/junaidzx90
@@ -109,8 +109,14 @@ function dffilter_post(){
 }
 
 add_shortcode("datefilter", "datefilter_callback" );
-function datefilter_callback(){
+function datefilter_callback($atts){
 	ob_start();
+	$atts = shortcode_atts(array(
+		'cat' => ""
+	), $atts, 'datefilter' );
+
+	$categories = explode(",", $atts['cat']);
+
 	require_once plugin_dir_path(__FILE__ )."public/partials/datefilter-output.php";
 	return ob_get_clean();
 }

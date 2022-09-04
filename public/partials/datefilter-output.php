@@ -25,6 +25,16 @@
                 'order' => 'DESC'
             );
 
+            if(sizeof($categories) > 0 && !empty($categories[0])){
+                $args['tax_query'] = array(
+                    array(
+                        'taxonomy' => 'category',
+                        'field'    => 'id',
+                        'terms'    => $categories
+                    )
+                );
+            }
+
             $posts = get_posts($args);
             if($posts){
                 foreach($posts as $post){
